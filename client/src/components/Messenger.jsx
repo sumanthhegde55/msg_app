@@ -16,7 +16,7 @@ const useStyles = makeStyles({
         paddingLeft:0
     },
     header:{
-        background: '#00bfa5',
+        background: '#128c7e',
         height: 115,
         boxShadow: 'none',
         paddingLeft:0
