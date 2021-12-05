@@ -1,4 +1,3 @@
-import { useState, setText} from 'react';
 import { Box, InputBase, makeStyles } from '@material-ui/core';
 import { Search as SearchIcon } from '@material-ui/icons';
 
@@ -53,6 +52,7 @@ const Search = ({ setText }) => {
                 input: classes.inputInput,
               }}
               inputProps={{ 'aria-label': 'search' }}
+              onChange = {(e) => setText(e.target.value)}
             />
           </Box>
         </Box>

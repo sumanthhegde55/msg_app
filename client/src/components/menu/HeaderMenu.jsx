@@ -40,9 +40,10 @@ const HeaderMenu = () => {
         setOpen(false);
     }
 
-    const handleClick = (e) =>{
-        setOpen(e.currentTarget);
-    }
+    const handleClick = (event) => {
+        setOpen(event.currentTarget);
+    };
+
     const toggleDrawer = () =>{
         setOpenDrawer(true);
     }

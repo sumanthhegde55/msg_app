@@ -47,7 +47,7 @@ export const Header = () => {
     return(
         <>
             <Box className = {classes.header}>
-                <img src={imgUrl} onClick = {() => toggleDrawer()} alt="display-picture" className = {classes.avatar} />
+                <img src={imgUrl} alt="display-picture" className = {classes.avatar}  onClick = {() => toggleDrawer()} />
                 <Box className = {classes.icons}> 
                     <Chat/>
                     <HeaderMenu/>

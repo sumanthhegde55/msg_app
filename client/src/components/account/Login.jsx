@@ -5,6 +5,7 @@ import {GoogleLogin} from 'react-google-login';
 import { useContext } from 'react';
 import {AccountContext} from '../context/AccountProvider';
 import { clientId } from '../constants/data';
+import {addUser} from '../service/api.js';
 const style = {
     dialogPaper: {
         marginTop: '12%',
@@ -17,6 +18,7 @@ const style = {
         overflow: 'hidden'
     }
 }
+
 const useStyles = makeStyles({
     component: {
         display: 'flex'
@@ -47,14 +49,17 @@ const useStyles = makeStyles({
         }
     }
 })
+
 const Login = ({classes}) => {
     const qrurl = 'https://www.ginifab.com/feeds/qr_code/img/qrcode.jpg';
     const classname = useStyles();
 
-    const {account,setAccount} = useContext(AccountContext);
-    const onLoginSuccess = (res) =>{
+    const {setAccount} = useContext(AccountContext);
+
+    const onLoginSuccess = async (res) =>{
         console.log('Login successfull',res.profileObj);
         setAccount(res.profileObj);
+        await addUser(res.profileObj);
     };
     const onLoginFailure = () =>{
         console.log('Login Failed');

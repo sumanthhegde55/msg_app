@@ -32,7 +32,6 @@ const Messenger = () => {
                 <Toolbar>
                 </Toolbar>
             </AppBar>
-            {"account in messenger : ",console.log(account)}
             {account ? <ChatBox/> : <Login/>}
         </Box>
     )
